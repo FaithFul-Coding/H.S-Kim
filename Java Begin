@@ -1,0 +1,91 @@
+Mydate Class
+
+package Mydate;
+
+public class Mydate {
+
+	private int date;
+	private int month;
+	private int year;
+	
+	public int getdate() {
+		return date;
+	}
+	
+	public int getmonth() {
+		return month;
+	}
+	
+	public int getyear() {
+		return year;
+	}
+	
+	
+	public void setMydate(int date,int month,int year) {
+		this.date=date;
+		this.month=month;
+		this.year=year;
+	}
+	public boolean isVaild() {
+		
+		switch(month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			if(date<1||date>31) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if(date<1||date>30) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		case 2:
+			if(date<1||date>28) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		
+		if (isVaild()==false) {
+			System.out.println("꺼져");
+		}
+		else if(isVaild()==true){
+			System.out.println("굿");
+		}
+		return false;
+	}
+}
+
+MydateTest Class
+
+package Mydate;
+
+public class MydateTest {
+
+	public static void main(String[] args) {
+		Mydate date1=new Mydate();
+		date1.setMydate(30, 2, 2019);
+		System.out.println(date1.isVaild());
+		
+		Mydate date2=new Mydate();
+		date2.setMydate(10, 10, 2019);
+		System.out.println(date2.isVaild());
+	}
+
+}
