@@ -62,12 +62,6 @@ public class Mydate {
 			}
 		}
 		
-		if (isVaild()==false) {
-			System.out.println("꺼져");
-		}
-		else if(isVaild()==true){
-			System.out.println("굿");
-		}
 		return false;
 	}
 }
